@@ -1,0 +1,228 @@
+/* Allgemeine Gestaltung */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container für die gesamte Seite */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header (Überschrift) */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Überschrift SteezyPicks */
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Normale Suchleiste */
+.search-container {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Suchfeld-Design (unter der Überschrift) */
+.search-bar {
+    width: 80%;
+    padding: 15px; /* Größe des Suchfeldes */
+    font-size: 16px;
+    border: 2px solid #333; /* Sichtbarer Rand */
+    border-radius: 25px;
+    background-color: transparent;  /* Hintergrund transparent */
+    outline: none;
+    transition: width 0.3s ease, padding 0.3s ease; /* Übergang für flüssige Größenänderung */
+}
+
+/* Fokus-Effekt entfernen */
+.search-bar:focus {
+    outline: none;  /* Entfernt den Standard-Fokus-Rand */
+    box-shadow: none;  /* Entfernt jeglichen Fokus-Schatten */
+}
+
+/* Kategorien */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.category {
+  background: #333;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Best Finds Abschnitt */
+.best-finds {
+  margin-top: 40px;
+}
+
+/* Produkt-Gitter */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Produktbox */
+.product {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Zentriert den Inhalt */
+}
+
+/* Produktbilder */
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Kauf-Button */
+.buy-button {
+  background-color: #808080; /* Grau */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px; /* Abgerundet */
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #606060; /* Dunkleres Grau */
+}
+
+/* Fokus-Effekt auch für die verschmolzene Suchleiste entfernen */
+.search-on-scroll .search-bar:focus {
+    outline: none;  /* Entfernt den Standard-Fokus-Rand */
+    box-shadow: none;  /* Entfernt jeglichen Fokus-Schatten */
+}
+
+.search-on-scroll {
+  position: fixed;
+  top: -80px; /* Start außerhalb des Bildschirms */
+  left: 50%;
+  transform: translateX(-50%) scale(0.95); /* Zentrieren & anfänglich verkleinern */
+  width: 80%; /* Gleiche Breite wie das ursprüngliche Suchfeld */
+  z-index: 20;
+  padding: 10px 0; /* Keine Hintergrundfläche */
+  text-align: center;
+  transition: top 0.3s ease, transform 0.3s ease;
+}
+
+.search-on-scroll.merge {
+  top: 60px; /* Endposition */
+  transform: translateX(-50%) scale(1);
+}
+
+/* Damit NUR die Suchleiste sichtbar bleibt */
+.search-on-scroll .search-bar {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 25px;
+  background-color: white; /* Falls du einen leichten Hintergrund möchtest */
+  outline: none;
+  box-sizing: border-box;
+  transition: padding 0.3s ease, width 0.3s ease;
+}
+
+/* Produkt-Galerie */
+.product-gallery {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Überschrift für den Abschnitt */
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Container für die Produktkarten */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexibles Grid */
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Gestaltung für jedes Produkt */
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Produktbild */
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Informationen zum Produkt */
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Allgemeine Gestaltung von HTML */
+html { 
+  scroll-behavior: smooth;
+}
+
+ .product-container {
+     display: flex;
+     flex-wrap: wrap;
+ }
+ .product-item {
+     flex: 1 1 auto;
+     margin: 10px;
+ }
+ ```
